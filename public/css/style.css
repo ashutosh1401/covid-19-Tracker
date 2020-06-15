@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+header h1 {
+  text-align: center;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  color: blueviolet;
+}
+.Red {
+  color: red;
+  font-weight: 500;
+  font-size: large;
+}
+.Blue {
+  color: #0315f1;
+  font-weight: 500;
+  font-size: large;
+}
+.Green {
+  color: #15c41a;
+  font-weight: 500;
+  font-size: large;
+}
+.Grey {
+  color: #575757;
+  font-weight: 500;
+  font-size: large;
+}
+body {
+  background-color: #ececec;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+  color: black;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+footer {
+  color: Black;
+  margin-top: 30px;
+  padding: 32px 0;
+}
+
+.container {
+  flex-grow: 1;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+table,
+td,
+th {
+  border: 1px solid white;
+  text-align: left;
+}
+
+table {
+  border-radius: 70%;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+.Red,
+.Blue,
+.Green,
+.Grey {
+  text-align: center;
+  text-shadow: dimgray;
+}
+.total {
+  text-align: center;
+  cursor: pointer;
+}
+.state {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+th:hover {
+  background-color: #c4c0c0;
+}
+
+.container-1 {
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    flex-grow: 1;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  .container-1 {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    flex-grow: 1;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  .container-1 {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 70px;
+  }
+  footer {
+    margin-top: 5px;
+    padding: 0 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    flex-grow: 1;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  .container-1 {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 70px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    font-size: x-small;
+    flex-grow: 1;
+    margin-top: 0px;
+    padding: 1px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  .container-1 {
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

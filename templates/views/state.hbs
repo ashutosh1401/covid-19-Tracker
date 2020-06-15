@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/c2e8af7a63.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <form action="/state" class="w3-container">
+            <input type="text" class="w3-input">
+            <button class="w3-btn w3-blue">Submit</button>
+        </form>
+        <table class="container-1">
+            <tr>
+                <th class="total"><b>State Name</b></th>
+                <th class="total"><b>Total confirmed</b></th>
+                <th class="total"><b>Total Active</b></th>
+                <th class="total"><b>Total Recovered</b></th>
+                <th class="total"><b>Total Deaths</b></th>
+            </tr>
+            <tr id="nstate">
+                <th id="Nstate" class="w3-centre total"></th>
+                <th>
+                    <p id="NewTcases" class="Red"></p>
+                </th>
+                <th>
+                    <p id="NewAcases" class="Blue"></p>
+                </th>
+                <th>
+                    <p id="NewRcases" class="Green"></p>
+                </th>
+                <th>
+                    <p id="NewTdeaths" class="Grey"></p>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        {{>footer}}
+        <p> Made with <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> by
+            <i>Team Marcos</i></p>
+        <div>
+            <a href="https://github.com/ashutosh1401" target="_blank"><i class="fa fa-github" aria-hidden="true">
+                    Github</i></a>
+            <a href="https://www.linkedin.com/in/ashutosh-thakur-5aa181199/" target="_blank"><i class="fa fa-linkedin"
+                    aria-hidden="true">
+                    Linkedin</i></a>
+        </div>
+    </footer>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>

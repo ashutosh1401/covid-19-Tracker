@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/c2e8af7a63.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <p> Current status of covid-19 in INDIA</p>
+
+        <form action="/state" method="POST" class="w3-container">
+            <input type="text" class="w3-input">
+            <button class="w3-btn w3-blue">Submit</button>
+        </form>
+        <table class="container-1">
+            <tr>
+                <th class="total"><b>Total confirmed</b></th>
+                <th class="total"><b>Total Active</b></th>
+                <th class="total"><b>Total Recovered</b></th>
+                <th class="total"><b>Total Deaths</b></th>
+            </tr>
+            <tr>
+                <th>
+                    <p id="Tcases" class="Red"></p>
+                </th>
+                <th>
+                    <p id="Acases" class="Blue"></p>
+                </th>
+                <th>
+                    <p id="Rcases" class="Green"></p>
+                </th>
+                <th>
+                    <p id="Tdeaths" class="Grey"></p>
+                </th>
+            </tr>
+        </table>
+        <br><br>
+        <div class="container-1">
+            <table>
+                <tr class="state">
+                    <th class="total">STATE/UT</th>
+                    <th class="total"><b>Total confirmed</b></th>
+                    <th class="total"><b>Total Active</b></th>
+                    <th class="total"><b>Total Recovered</b></th>
+                    <th class="total"><b>Total Deaths</b></th>
+                </tr>
+                <tr id="state1">
+                    <th id="state-1" class="w3-centre total"></th>
+                    <th>
+                        <p id="MTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="MAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="MRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="MTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr id="state2">
+                    <th id="state-2" class="total"></th>
+                    <th>
+                        <p id="TTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="TAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="TRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="TTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr id="state3">
+                    <th id="state-3" class="total"></th>
+                    <th>
+                        <p id="GTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="GAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="GRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="GTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-4" class="total"></th>
+                    <th>
+                        <p id="DTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="DAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="DRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="DTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-5" class="total"></th>
+                    <th>
+                        <p id="RTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="RAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="RRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="RTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-6" class="total"></th>
+                    <th>
+                        <p id="MPTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="MPAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="MPRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="MPTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-7" class="total"></th>
+                    <th>
+                        <p id="UPTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="UPAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="UPRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="UPTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-8" class="total"></th>
+                    <th>
+                        <p id="WBTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="WBAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="WBRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="WBTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-9" class="total"></th>
+                    <th>
+                        <p id="APTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="APAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="APRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="APTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-10" class="total"></th>
+                    <th>
+                        <p id="BTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="BAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="BRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="BTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-11" class="total"></th>
+                    <th>
+                        <p id="PTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="PAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="PRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="PTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-12" class="total"></th>
+                    <th>
+                        <p id="TETcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="TEAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="TERcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="TETdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-13" class="total"></th>
+                    <th>
+                        <p id="KTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="KAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="KRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="KTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-14" class="total"></th>
+                    <th>
+                        <p id="UATcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="UAAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="UARcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="UATdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-15" class="total"></th>
+                    <th>
+                        <p id="JKTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="JKAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="JKRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="JKTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-16" class="total"></th>
+                    <th>
+                        <p id="ODTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="ODAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="ODRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="ODTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-17" class="total"></th>
+                    <th>
+                        <p id="HRTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="HRAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="HRRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="HRTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-18" class="total"></th>
+                    <th>
+                        <p id="KLTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="KLAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="KLRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="KLTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-19" class="total"></th>
+                    <th>
+                        <p id="JHTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="JHAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="JHRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="JHTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-20" class="total"></th>
+                    <th>
+                        <p id="ASTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="ASAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="ASRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="ASTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-21" class="total"></th>
+                    <th>
+                        <p id="CHTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="CHAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="CHRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="CHTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-22" class="total"></th>
+                    <th>
+                        <p id="TRTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="TRAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="TRRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="TRTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-23" class="total"></th>
+                    <th>
+                        <p id="CTTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="CTAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="CTRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="CTTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-24" class="total"></th>
+                    <th>
+                        <p id="HPTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="HPAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="HPRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="HPTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-25" class="total"></th>
+                    <th>
+                        <p id="UTTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="UTAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="UTRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="UTTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-26" class="total"></th>
+                    <th>
+                        <p id="GOTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="GOAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="GORcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="GOTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-27" class="total"></th>
+                    <th>
+                        <p id="LDTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="LDAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="LDRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="LDTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-28" class="total"></th>
+                    <th>
+                        <p id="ANTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="ANAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="ANRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="ANTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-29" class="total"></th>
+                    <th>
+                        <p id="MNTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="MNAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="MNRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="MNTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-30" class="total"></th>
+                    <th>
+                        <p id="PYTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="PYAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="PYRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="PYTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-31" class="total"></th>
+                    <th>
+                        <p id="MGTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="MGAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="MGRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="MGTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-32" class="total"></th>
+                    <th>
+                        <p id="MZTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="MZAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="MZRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="MZTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-33" class="total"></th>
+                    <th>
+                        <p id="ARTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="ARAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="ARRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="ARTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-34" class="total"></th>
+                    <th>
+                        <p id="DNTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="DNAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="DNRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="DNTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-35" class="total"></th>
+                    <th>
+                        <p id="NLTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="NLAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="NLRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="NLTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-36" class="total"></th>
+                    <th>
+                        <p id="LKTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="LKAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="LKRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="LKTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="state-37" class="total"></th>
+                    <th>
+                        <p id="SKTcases" class="Red"></p>
+                    </th>
+                    <th>
+                        <p id="SKAcases" class="Blue"></p>
+                    </th>
+                    <th>
+                        <p id="SKRcases" class="Green"></p>
+                    </th>
+                    <th>
+                        <p id="SKTdeaths" class="Grey"></p>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {{>footer}}
+    <p> Made with <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> by
+        <i>Team Marcos</i></p>
+    <div>
+        <a href="https://github.com/ashutosh1401" target="_blank"><i class="fa fa-github" aria-hidden="true">
+                Github</i></a>
+        <a href="https://www.linkedin.com/in/ashutosh-thakur-5aa181199/" target="_blank"><i class="fa fa-linkedin"
+                aria-hidden="true">
+                Linkedin</i></a>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
